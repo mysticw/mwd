@@ -11,9 +11,9 @@
 ; The name, description and screenshot used for this theme on the Appearance
 ; page at admin/appearance.
 
+name        = Mystic Zen
+description = A mobile-first responsive theme, that uses <a href="http://sass-lang.com/" title="Sass">Sass</a> and  <a href="http://susy.oddbird.net/" title="Susy">Susy</a> instead of zen grids. It adds triptych regions below the main content and columns to the footer.
 screenshot  = screenshot.png
-name        = mystic zen
-description = Read the <a href="https://drupal.org/node/873778">online docs</a> or the included README.txt on how to create a theme with Zen.
 
 
 
@@ -21,7 +21,7 @@ description = Read the <a href="https://drupal.org/node/873778">online docs</a> 
 
 core        = 7.x
 base theme  = zen
-
+engine      = phptemplate
 
 
 ; This section controls the CSS files for your theme. There are 3 different
@@ -89,10 +89,21 @@ regions[header]         = Header
 regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
 regions[help]           = Help
+
 regions[content]        = Content
 regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
+
+regions[triptych_first] = Triptych left
+regions[triptych_second] = Triptych center
+regions[triptych_third] = Triptych right
+
+regions[footer_firstcolumn] = Footer first column
+regions[footer_secondcolumn] = Footer second column
+regions[footer_thirdcolumn] = Footer third column
+regions[footer_fourthcolumn] = Footer fourth column
 regions[footer]         = Footer
+
 regions[bottom]         = Page bottom
 
 ; The page_top and page_bottom regions are hidden, which means they will not
@@ -127,8 +138,8 @@ features[] = secondary_menu
 settings[zen_breadcrumb]           = yes
 settings[zen_breadcrumb_separator] = ' › '
 settings[zen_breadcrumb_home]      = 1
-settings[zen_breadcrumb_trailing]  = 0
-settings[zen_breadcrumb_title]     = 0
+settings[zen_breadcrumb_trailing]  = 1
+settings[zen_breadcrumb_title]     = 1
 settings[zen_skip_link_anchor]     = main-menu
 settings[zen_skip_link_text]       = Jump to navigation
 settings[zen_html5_respond_meta][] = respond
