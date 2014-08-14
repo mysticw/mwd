@@ -97,10 +97,12 @@ $font-monospace:   $courier;
 $clr-orange: #ff9900;
 $clr-lt-gray: #ccc;
 $clr-gray: #999;
-$clr-drk-gray: #666;
+$clr-drk-gray: #333;
 $clr-blue: #66ccff;
 $clr-lt-blue: #3399ff;
 
+$black: #000;
+$white: #fff;
 
 //============================================================================
 // Grid and Layout Styles
@@ -126,7 +128,7 @@ $grid-padding: $gutter-width;	// grid-padding equal to gutters
 // Susy breakpoints					// media layouts
 
 $bp-tablet: 0 320px;				// tablet breakpoint in portait mode, 320px wide
-$bp-desktop: 960px:				// desktop breakpoint, 960px wide
+$bp-desktop: 960px;				// desktop breakpoint, 960px wide
 
 
 // The amount lists, blockquotes and comments are indented.
@@ -162,4 +164,4 @@ $tabs-border: #bbb;
 @import "breakpoint";
 
 // Now we add our custom helper mixins.
-@import "mixins";
+//@import "mixins";

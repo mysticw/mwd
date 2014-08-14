@@ -10,19 +10,19 @@
 
 // We are going to create a fluid grid with 1, 3, or 5 columns and 20px gutters
 // between columns (applied as 10px of left/right padding on each column).
-$zen-column-count:  1;
-$zen-gutter-width:  20px;
+//$zen-column-count:  1;
+//$zen-gutter-width:  20px;
 
 // If you need IE6/7 support for box-sizing: border-box (default), see _init.scss
 //$zen-box-sizing: content-box;
 
 // You can generate more efficient CSS if you manually apply the
 // zen-grid-item-base mixin to all grid items from within a single ruleset.
-$zen-auto-include-item-base: false;
+//$zen-auto-include-item-base: false;
 // $zen-auto-include-flow-item-base: false;
 
 // Suppress this section of CSS for RTL layouts since it contains no LTR-specific styles.
-@if $zen-reverse-all-floats == false {
+//@if $zen-reverse-all-floats == false {
 
 /**
  * Center the page.
@@ -45,14 +45,13 @@ $zen-auto-include-item-base: false;
 .region-sidebar-second,
 #footer {
   // See the note about $zen-auto-include-item-base above.
-  @include zen-grid-item-base();
+  @include full;
 }
 
 /* Containers for grid items and flow items. */
 #header,
-#main,
 #footer {
-  @include zen-grid-container();
+  @include full;
 }
 
 /* Navigation bar */
@@ -71,7 +70,7 @@ $zen-auto-include-item-base: false;
   }
 }
 
-} // End of @if $zen-reverse-all-floats == true
+//} // End of @if $zen-reverse-all-floats == true
 
 /**
  * Use 3 grid columns for smaller screens.
