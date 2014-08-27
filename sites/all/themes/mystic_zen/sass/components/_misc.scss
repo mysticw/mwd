@@ -36,25 +36,25 @@
  */
 
 /* element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
-.element-invisible,
-%element-invisible {
-  @include element-invisible;
-}
+//.element-invisible,
+//%element-invisible {
+//  @include element-invisible;
+//}
 
 /* Turns off the element-invisible effect. */
-%element-invisible-off {
-  @include element-invisible-off;
-}
+//%element-invisible-off {
+//  @include element-invisible-off;
+//}
 
-.element-focusable,
-%element-focusable {
-  @extend %element-invisible;
+//.element-focusable,
+//%element-focusable {
+//  @extend %element-invisible;
 
-  &:active,
-  &:focus {
-    @extend %element-invisible-off;
-  }
-}
+//  &:active,
+//  &:focus {
+//    @extend %element-invisible-off;
+//  }
+//}
 
 /*
  * The skip-link link will be completely hidden until a user tabs to the link.
@@ -141,10 +141,10 @@
     margin-bottom: 0;
   }
 
-  .block-menu .block__title,
-  .block-menu-block .block__title {
-    @extend %element-invisible;
-  }
+//  .block-menu .block__title,
+//  .block-menu-block .block__title {
+//    @extend %element-invisible;
+//  }
 
   /* Main menu and secondary menu links and menu block links. */
   .links,

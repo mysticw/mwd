@@ -1,9 +1,34 @@
-#footer{
-	background: $clr-gray;
+#footer-wrapper{
+	background: $clr-lt-gray;
 	padding: 25px 10px;
+	border-top: 20px solid $clr-orange;
 	a{
 		color: $clr-orange;
 		&:hover{
+			color: $white;
+		}
+	}
+	#footer{
+		background: $clr-drk-gray;
+		padding: 10px;
+		color: $white;
+		
+		#block-menu-menu-policy-menu ul li{
+			display: inline-block;
+		}
+		ul.menu{
+			padding: 0;
+		}
+	}
+	#footer-columns{
+		.region{
+		}
+		.region-footer-firstcolumn,
+		.region-footer-secondcolumn,
+		.region-footer-thirdcolumn,
+		.region-footer-fourthcolumn{
+			float: left;
+			width: 25%;
 		}
 	}
 }

@@ -21,8 +21,78 @@
 // Optionally, add your own components here.
 @import "components/header";
 @import "components/footer";
+@import "components/triptych";
 @import "print";
 
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */
+
+//main content styling
+
+article p{
+	text-align: center;
+}
+
+//flex-slider styling
+
+.flexslider{
+	margin: 0;
+	border: 0;
+}
+
+#transpbody{
+	position: relative;
+	top: -112px;
+	background-color: rgba(0,0,0,.7);
+	padding:2em;
+}
+
+#transtitle{
+	color: $white;
+	margin-left: 2em;
+	z-index: 2;
+}
+
+#trbody{
+	color: $white;
+
+	& p{
+		margin: 0 0 0 2em;
+	}
+}
+
+.flex-control-nav{
+	z-index:	10;
+	bottom:	14em;
+	width:	15%;
+	right:	0;
+}
+
+//Portfolio slider styling
+
+//#prjinfo{
+//	position: relative;
+//	top: -320px;
+//	right: -55em;
+//	background-color: rgba(0,0,0,.5);
+//	padding: 1em;
+//	width: 18em;
+//}//
+
+//#prjbody{
+//	color: $white;
+//	z-index:2;
+//}//
+
+//.view-portfolio-view .flex-control-nav{
+//	z-index: 10;
+//	bottom:	21em;
+//	width:	15%;
+//	right:	1.5em;
+//}
+
+
+
+
+
