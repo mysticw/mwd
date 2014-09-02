@@ -1,4 +1,11 @@
 
+/**
+ * Center the page.
+ *
+ * For screen sizes larger than 1200px, prevent excessively long lines of text
+ * by setting a max-width.
+ */
+
 .front #content{
 	.page__title{
 		text-align: center;

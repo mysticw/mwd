@@ -56,7 +56,7 @@ $zen-auto-include-item-base: false;
 #header,
 #main,
 #footer {
-  @include zen-grid-container();
+  @include full();
 }
 
 /* Navigation bar */

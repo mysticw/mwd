@@ -29,7 +29,13 @@ ul {
  * @file
  * RTL companion for the layout-responsive.css file.
  */
-/* line 3, ../sass/layouts/_responsive.scss */
+/**
+ * Center the page.
+ *
+ * For screen sizes larger than 1200px, prevent excessively long lines of text
+ * by setting a max-width.
+ */
+/* line 10, ../sass/layouts/_responsive.scss */
 .front #content .page__title {
   text-align: center;
 }
