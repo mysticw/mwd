@@ -1424,12 +1424,12 @@ tr.selected td {
 /* line 1, ../sass/components/_footer.scss */
 #footer-wrapper {
   background: #cccccc;
-  padding: 25px 10px;
   border-top: 20px solid #ff9900;
 }
-/* line 5, ../sass/components/_footer.scss */
+/* line 4, ../sass/components/_footer.scss */
 #footer-wrapper a {
   color: #ff9900;
+  text-decoration: none;
 }
 /* line 7, ../sass/components/_footer.scss */
 #footer-wrapper a:hover {
@@ -1454,6 +1454,7 @@ tr.selected td {
 #footer-wrapper #footer-columns .region-footer-secondcolumn,
 #footer-wrapper #footer-columns .region-footer-thirdcolumn,
 #footer-wrapper #footer-columns .region-footer-fourthcolumn {
+  padding: 0 10px 0 10px;
   float: left;
   width: 25%;
 }

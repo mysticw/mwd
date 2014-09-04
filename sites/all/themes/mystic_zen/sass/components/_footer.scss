@@ -1,9 +1,9 @@
 #footer-wrapper{
 	background: $clr-lt-gray;
-	padding: 25px 10px;
 	border-top: 20px solid $clr-orange;
 	a{
 		color: $clr-orange;
+		text-decoration: none;
 		&:hover{
 			color: $white;
 		}
@@ -20,16 +20,16 @@
 			padding: 0;
 		}
 	}
-	#footer-columns{
+	#footer-columns{		
 		.region{
 		}
 		.region-footer-firstcolumn,
 		.region-footer-secondcolumn,
 		.region-footer-thirdcolumn,
 		.region-footer-fourthcolumn{
+			padding: 0 10px 0 10px;
 			float: left;
 			width: 25%;
 		}
 	}
 }
-
