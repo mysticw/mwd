@@ -1,126 +1,98 @@
-/**
- * @file
- * Positioning for a fixed-width, desktop-centric layout.
- *
- * Define CSS classes to create a table-free, 3-column, 2-column, or single
- * column layout depending on whether blocks are enabled in the left or right
- * columns.
- *
- * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
- */
+//============================================================================
+// Grid and Layout Styles
+//============================================================================
 
-// We are going to create a 980px wide, 5 column grid with 20px gutters between
-// columns (applied as 10px of left/right padding on each column).
-$zen-column-count:  5;
-$zen-gutter-width:  20px;
-$zen-grid-width:    980px;
+//----------------------------------------------------------------------------
+// Variables
+//----------------------------------------------------------------------------
 
-// If you need IE6/7 support for box-sizing: border-box (default), see _init.scss
-// Since the same CSS unit for grid width and gutter width are set here
-// we can use box-sizing: content-box; without worrying about polyfills.
-$zen-box-sizing: content-box;
+// Susy Setup
+// @see http://susy.oddbird.net/guides/getting-started
+// The basic susy grid is composed using two simple mixins:
+// Use the container() mixin to create you initial grid context.
+// Use the span-columns() mixin to declare the width of an element on the grid.
 
-// You can generate more efficient CSS if you manually apply the
-// zen-grid-item-base mixin to all grid items from within a single ruleset.
-$zen-auto-include-item-base: false;
-// $zen-auto-include-flow-item-base: false;
+$Susy: (
+  debug: (
+    image:  show,
+    color:  blue,
+    output: overlay,
+    ),
+  );
 
-// Suppress this section of CSS for RTL layouts since it contains no LTR-specific styles.
-@if $zen-reverse-all-floats == false {
+// fixed desktop
 
-/**
- * Center the page.
- *
- * If you want to make the page a fixed width and centered in the viewport,
- * this is the standards-compliant way to do that.
- */
-#page,
-.region-bottom {
-  margin-left: auto;
-  margin-right: auto;
-  width: $zen-grid-width;
+$total-columns: 16;        // a 4-column grid
+$column-width: 47px;        // each column is 65px wide
+$gutter-width: 12px;        // 10px gutters between columns
+$grid-padding: $gutter-width; // grid-padding equal to gutters
+
+// Susy breakpoints         // media layouts
+
+$bp-desktop: 960px;       // desktop breakpoint, 960px wide
+
+#main{
+  @include container($bp-desktop);
 }
 
-/* Apply the shared properties of grid items in a single, efficient ruleset. */
-#header,
-#content,
-#navigation,
-.region-sidebar-first,
-.region-sidebar-second,
-#footer {
-  // See the note about $zen-auto-include-item-base above.
-  @include zen-grid-item-base();
+.sidebars{
+  //@include span(isolate 3 at 2 of $total-columns);
+  @include span(4 of $total-columns);
+  padding-top: 100px;
 }
 
-/* Containers for grid items and flow items. */
-#header,
-#main,
-#footer {
-  @include full();
+#content{
+  //@include span(isolate 9 at 5 of $total-columns omega);
+  @include span(12 of $total-columns omega);
 }
 
-/* Navigation bar */
-#main {
-  /* Move all the children of #main down to make room. */
-  padding-top: $nav-height;
-  position: relative;
-}
-#navigation {
-  /* Move the navbar up inside #main's padding. */
-  position: absolute;
-  top: 0;
-  height: $nav-height;
-  width: $zen-grid-width - $zen-gutter-width;
+//#block-views-biographies-block{
+//  @include span(9 of 9);
+//}//
+
+#block-block-3{
+  @include span(3 of 9);
 }
 
-} // End of @if $zen-reverse-all-floats == true
+#block-block-8,{
+  @include span(3 of 9);
+}
+
+#block-block-9{
+  @include span(3 of 9 omega);
+}
+
+
+
+//  .sidebar-second{
+//    @include span-columns(3,16);
+//  }
+//}
+//.two-sidebars .main-content{
+//  @include span-columns(9,16);
+//}
+//.one-sidebar.sidebar-first #main{
+//  @include span(9);
+//}
+//.one-sidebar.sidebar-second .main-content{
+//  @include span-columns(9,16);
+//}
+//.no-sidebars .main-content{
+//  @include span-columns(16,16);
+//}
+
+
 
 /**
  * The layout when there is only one sidebar, the left one.
  */
-.sidebar-first {
-  /* Span 4 columns, starting in 2nd column from left. */
-  #content {
-    @include zen-grid-item(4, 2);
-  }
+//aside{
+//  /* Span 3 columns, starting in 2nd column from left. */
+//  @include container;
+//    .region-sidebar-first{
+//      @include span-columns(3, 2, $total-columns)
+//    }
+//  }//
 
-  /* Span 1 column, starting in 1st column from left. */
-  .region-sidebar-first {
-    @include zen-grid-item(1, 1);
-  }
-}
 
-/**
- * The layout when there is only one sidebar, the right one.
- */
-.sidebar-second {
-  /* Span 4 columns, starting in 1st column from left. */
-  #content {
-    @include zen-grid-item(4, 1);
-  }
 
-  /* Span 1 column, starting in 5th column from left. */
-  .region-sidebar-second {
-    @include zen-grid-item(1, 5);
-  }
-}
-
-/**
- * The layout when there are two sidebars.
- */
-.two-sidebars {
-  /* Span 3 columns, starting in 2nd column from left. */
-  #content {
-    @include zen-grid-item(3, 2);
-  }
-
-  /* Span 1 column, starting in 1st column from left. */
-  .region-sidebar-first {
-    @include zen-grid-item(1, 1);
-  }
-
-  /* Span 1 column, starting in 5th column from left. */
-  .region-sidebar-second {
-    @include zen-grid-item(1, 5);
-  }
-}

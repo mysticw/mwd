@@ -13,6 +13,7 @@
 @import "normalize";
 
 /* Layout rules */
+@import "layouts/fixed";
 @import "layouts/responsive";
 
 /* Component (SMACSS module) rules */
@@ -67,6 +68,15 @@ article p{
 	bottom:	14em;
 	width:	15%;
 	right:	0;
+}
+
+#navigation{
+	display: block;
+	width: 310px;
+	height: 50px;
+	position: absolute;
+	top: 20px;
+	left: 232px;
 }
 
 //Portfolio slider styling
