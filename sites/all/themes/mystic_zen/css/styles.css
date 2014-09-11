@@ -577,58 +577,6 @@ table {
 }
 
 /* Layout rules */
-/* line 34, ../sass/layouts/_fixed.scss */
-#main {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 12, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
-#main:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-/* line 38, ../sass/layouts/_fixed.scss */
-.sidebars {
-  width: 24.05063%;
-  float: left;
-  margin-right: 1.26582%;
-  padding-top: 100px;
-}
-
-/* line 44, ../sass/layouts/_fixed.scss */
-#content {
-  width: 74.68354%;
-  float: right;
-  margin-right: 0;
-}
-
-/* line 53, ../sass/layouts/_fixed.scss */
-#block-block-3 {
-  width: 31.81818%;
-  float: left;
-  margin-right: 2.27273%;
-}
-
-/* line 57, ../sass/layouts/_fixed.scss */
-#block-block-8 {
-  width: 31.81818%;
-  float: left;
-  margin-right: 2.27273%;
-}
-
-/* line 61, ../sass/layouts/_fixed.scss */
-#block-block-9 {
-  width: 31.81818%;
-  float: right;
-  margin-right: 0;
-}
-
-/**
- * The layout when there is only one sidebar, the left one.
- */
 /**
  * Center the page.
  *

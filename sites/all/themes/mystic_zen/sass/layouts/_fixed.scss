@@ -77,7 +77,8 @@ $bp-desktop: 960px;       // desktop breakpoint, 960px wide
 //.one-sidebar.sidebar-second .main-content{
 //  @include span-columns(9,16);
 //}
-//.no-sidebars .main-content{
+
+//.no-sidebars #main{
 //  @include span-columns(16,16);
 //}
 
