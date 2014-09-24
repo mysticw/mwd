@@ -583,11 +583,103 @@ table {
  * For screen sizes larger than 1200px, prevent excessively long lines of text
  * by setting a max-width.
  */
-/* line 10, ../sass/layouts/_responsive.scss */
+/* line 13, ../sass/layouts/_responsive.scss */
 .front #content .page__title {
   text-align: center;
 }
 
+/* line 18, ../sass/layouts/_responsive.scss */
+#main {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+#main:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 22, ../sass/layouts/_responsive.scss */
+.region-sidebar-first,
+.region-sidebar-second {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+.region-sidebar-first:after,
+.region-sidebar-second:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/**
+ * Use 4 grid columns for smaller screens.
+ **/
+/**
+* Use 8 grid columns for tablet screens.
+**/
+/**
+* Use 16 grid columns for Larger screens.
+**/
+@media (min-width: 1440px) {
+  /**
+  * The Layout when there are no sidebars.
+  **/
+  /* line 121, ../sass/layouts/_responsive.scss */
+  .no-sidebars #content {
+    clear: both;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /**
+  * The Layout when there is only one sidebar, the left one.
+  **/
+  /* line 129, ../sass/layouts/_responsive.scss */
+  .sidebar-first {
+    /* Span 12 columns, starting in the 5th column from the left */
+    /* Span 4 columns, starting in the 1st column from the left */
+  }
+  /* line 132, ../sass/layouts/_responsive.scss */
+  .sidebar-first #content article {
+    width: 74.68354%;
+    float: right;
+    margin-right: 0;
+  }
+  /* line 139, ../sass/layouts/_responsive.scss */
+  .sidebar-first .region-sidebar-first aside {
+    width: 24.05063%;
+    float: left;
+    margin-right: 1.26582%;
+  }
+
+  /**
+  * The Layout when there is only one sidebar, the right one.
+  **/
+  /* line 148, ../sass/layouts/_responsive.scss */
+  .sidebar-second {
+    /* Span 12 columns, starting in the 5th column from the left */
+    /* Span 4 columns, starting in the 1st column from the left */
+  }
+  /* line 150, ../sass/layouts/_responsive.scss */
+  .sidebar-second #content {
+    width: 74.68354%;
+    float: left;
+    margin-right: 1.26582%;
+  }
+  /* line 155, ../sass/layouts/_responsive.scss */
+  .sidebar-second .region-sidebar-second {
+    width: 24.05063%;
+    float: right;
+    margin-right: 0;
+  }
+}
 /* Component (SMACSS module) rules */
 /**
  * @file
@@ -1421,6 +1513,39 @@ tr.selected td {
   height: 4em;
 }
 
+/* line 7, ../sass/components/_header.scss */
+.header__region {
+  clear: inherit;
+  float: left;
+  padding-left: 150px;
+  padding-top: 15px;
+}
+
+/* line 14, ../sass/components/_header.scss */
+.sf-menu li {
+  padding: 0 4.5em 0 0;
+}
+/* line 17, ../sass/components/_header.scss */
+.sf-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  height: 62px;
+}
+/* line 23, ../sass/components/_header.scss */
+.sf-menu li a:hover {
+  color: #ff9900;
+  background: url("../images/nav-arrow.png") no-repeat 50% 50px;
+  height: 62px;
+}
+
+/* line 31, ../sass/components/_header.scss */
+.sf-menu .active-trail a {
+  color: #ff9900;
+  background: url("../images/nav-arrow.png") no-repeat 50% 50px;
+  height: 62px;
+}
+
 /* line 1, ../sass/components/_footer.scss */
 #footer-wrapper {
   background: #cccccc;
@@ -1555,18 +1680,18 @@ tr.selected td {
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */
-/* line 34, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
 article p {
   text-align: center;
 }
 
-/* line 40, ../sass/styles.scss */
+/* line 52, ../sass/styles.scss */
 .flexslider {
   margin: 0;
   border: 0;
 }
 
-/* line 45, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 #transpbody {
   position: relative;
   top: -112px;
@@ -1574,23 +1699,23 @@ article p {
   padding: 2em;
 }
 
-/* line 52, ../sass/styles.scss */
+/* line 64, ../sass/styles.scss */
 #transtitle {
   color: white;
   margin-left: 2em;
   z-index: 2;
 }
 
-/* line 58, ../sass/styles.scss */
+/* line 70, ../sass/styles.scss */
 #trbody {
   color: white;
 }
-/* line 61, ../sass/styles.scss */
+/* line 73, ../sass/styles.scss */
 #trbody p {
   margin: 0 0 0 2em;
 }
 
-/* line 66, ../sass/styles.scss */
+/* line 78, ../sass/styles.scss */
 .flex-control-nav {
   z-index: 10;
   bottom: 14em;
@@ -1598,7 +1723,7 @@ article p {
   right: 0;
 }
 
-/* line 73, ../sass/styles.scss */
+/* line 85, ../sass/styles.scss */
 #navigation {
   display: block;
   width: 310px;
@@ -1606,4 +1731,9 @@ article p {
   position: absolute;
   top: 20px;
   left: 232px;
+}
+
+/* line 119, ../sass/styles.scss */
+#footer-wrapper {
+  clear: both;
 }

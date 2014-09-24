@@ -31,6 +31,18 @@
 
 //main content styling
 
+//body{
+//	@include breakpoint($bp-handheld) {
+//		background: $clr-gray;
+//	}
+//	@include breakpoint($bp-tablet) {
+//		background: $red;
+//	}
+//	@include breakpoint($bp-desktop) {
+//		background: $clr-lt-blue;
+//	}
+//}
+
 article p{
 	text-align: center;
 }
@@ -102,6 +114,11 @@ article p{
 //	right:	1.5em;
 //}
 
+//Footer styling
+
+#footer-wrapper{
+	clear: both;
+}
 
 
 
