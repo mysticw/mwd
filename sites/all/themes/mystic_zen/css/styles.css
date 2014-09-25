@@ -583,7 +583,7 @@ table {
  * For screen sizes larger than 1200px, prevent excessively long lines of text
  * by setting a max-width.
  */
-/* line 21, ../sass/layouts/_responsive.scss */
+/* line 22, ../sass/layouts/_responsive.scss */
 .front #content .page__title {
   text-align: center;
 }
@@ -598,12 +598,12 @@ table {
 * Use 16 grid columns for Larger screens.
 **/
 @media (min-width: 1440px) {
-  /* line 168, ../sass/layouts/_responsive.scss */
+  /* line 169, ../sass/layouts/_responsive.scss */
   #main {
     clear: both;
   }
 
-  /* line 173, ../sass/layouts/_responsive.scss */
+  /* line 174, ../sass/layouts/_responsive.scss */
   aside {
     width: 24.05063%;
     float: left;
@@ -611,7 +611,7 @@ table {
     margin-top: -560px;
   }
 
-  /* line 181, ../sass/layouts/_responsive.scss */
+  /* line 182, ../sass/layouts/_responsive.scss */
   article {
     width: 74.68354%;
     float: right;
@@ -619,7 +619,7 @@ table {
     outline: 1px solid #999999;
   }
 
-  /* line 186, ../sass/layouts/_responsive.scss */
+  /* line 187, ../sass/layouts/_responsive.scss */
   #block-views-biographies-block {
     width: 74.68354%;
     float: right;
@@ -627,13 +627,30 @@ table {
     outline: 1px solid #999999;
   }
 
-  /* line 191, ../sass/layouts/_responsive.scss */
+  /* line 192, ../sass/layouts/_responsive.scss */
   #block-block-3 {
     width: 24.05063%;
     float: left;
     margin-right: 1.26582%;
     outline: 1px solid #999999;
     clear: right;
+  }
+
+  /* line 205, ../sass/layouts/_responsive.scss */
+  #block-block-8 {
+    width: 24.05063%;
+    float: left;
+    margin-left: 50.63291%;
+    margin-right: -100%;
+    outline: 1px solid #999999;
+  }
+
+  /* line 214, ../sass/layouts/_responsive.scss */
+  #block-block-9 {
+    width: 24.05063%;
+    float: right;
+    margin-right: 0;
+    outline: 1px solid #999999;
   }
 }
 /* Component (SMACSS module) rules */

@@ -10,9 +10,10 @@ $susy: (
 	columns: 16,
 	global-box-sizing: border-box,
 	debug: (
-		image: show-columns,
-		color: rgba(#66f, .25),
+		image: show,
+		color: rgba(#ff9900, .25),
 		output: background,
+		toggle:	top right
 		)
 );
 
@@ -201,22 +202,22 @@ $susy: (
 		clear: right;
 	}
 
-//	#block-block-8{
-////		@include span(12 omega);
-////		@include span(11 omega);
-////		@include span(8 omega);
-////		@include span(4);
-//		@include span(isolate 4 at 9 of 16);
-//		outline: 1px solid $clr-gray;
-//	}//
+	#block-block-8{
+//		@include span(12 omega);
+//		@include span(11 omega);
+//		@include span(8 omega);
+//		@include span(4);
+		@include span(isolate 4 at 9 of 16);
+		outline: 1px solid $clr-gray;
+	}
 
-//	#block-block-9{
-////		@include span(12 omega);
-////		@include span(11 omega);
-////		@include span(10 omega);
-//		@include span(4 omega);
-//		outline: 1px solid $clr-gray;
-//	}
+	#block-block-9{
+//		@include span(12 omega);
+//		@include span(11 omega);
+//		@include span(10 omega);
+		@include span(4 omega);
+		outline: 1px solid $clr-gray;
+	}
 }
 
 
