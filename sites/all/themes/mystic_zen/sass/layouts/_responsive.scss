@@ -6,7 +6,15 @@
  * For screen sizes larger than 1200px, prevent excessively long lines of text
  * by setting a max-width.
  */
-
+$susy: (
+	columns: 16,
+	global-box-sizing: border-box,
+	debug: (
+		image: show-columns,
+		color: rgba(#66f, .25),
+		output: background,
+		)
+);
 
 
 .front #content{
@@ -15,14 +23,10 @@
 	}
 }
 
-#main{
-	@include container($bp-wide);
-}
+//#main{
+//	@include container($bp-wide);
+//}
 
-.region-sidebar-first,
-.region-sidebar-second{
-	@include container;
-}
 /**
  * Use 4 grid columns for smaller screens.
  **/
@@ -112,90 +116,90 @@
  * Use 16 grid columns for Larger screens.
  **/
 
+//@include susy-breakpoint($bp-wide, 16){//
+
+//	/**
+//	* The Layout when there are no sidebars.
+//	**/
+//	.no-sidebars{
+//		#content{
+//			@include full;
+//		}
+//	}//
+
+//	/**
+//	* The Layout when there is only one sidebar, the left one.
+//	**/
+//	.sidebar-first{
+//		/* Span 12 columns, starting in the 5th column from the left */
+//		
+//		article{
+//			@include span(12 omega);
+//		}
+//		//
+
+//		/* Span 4 columns, starting in the 1st column from the left */
+//		
+//		aside{
+//			@include span(4 of 16);	
+//		}
+//		
+//	}//
+
+//	/**
+//	* The Layout when there is only one sidebar, the right one.
+//	**/
+//	.sidebar-second{
+//		/* Span 12 columns, starting in the 5th column from the left */
+//		#content{
+//			@include span(12);
+//		}//
+
+//		/* Span 4 columns, starting in the 1st column from the left */
+//		.region-sidebar-second{
+//			@include span(4 omega);
+//		}
+//	}
+//}
+
+
 @include susy-breakpoint($bp-wide, 16){
 
-	/**
-	* The Layout when there are no sidebars.
-	**/
-	.no-sidebars{
-		#content{
-			@include full;
-		}
+	#main{
+		clear: both;
+//		background-color: $clr-drk-gray;
 	}
 
-	/**
-	* The Layout when there is only one sidebar, the left one.
-	**/
-	.sidebar-first{
-		/* Span 12 columns, starting in the 5th column from the left */
-		#content{
-			article{
-				@include span(12 omega);
-			}
-		}
-
-		/* Span 4 columns, starting in the 1st column from the left */
-		.region-sidebar-first{
-			aside{
-				@include span(4);	
-			}
-		}
+	aside{
+		@include span(4);		
+//		@include span(isolate 4 at 0 of 16);
+//		position: absolute;
+//		top: 10px;
+		margin-top: -560px;
 	}
 
-	/**
-	* The Layout when there is only one sidebar, the right one.
-	**/
-	.sidebar-second{
-		/* Span 12 columns, starting in the 5th column from the left */
-		#content{
-			@include span(12);
-		}
-
-		/* Span 4 columns, starting in the 1st column from the left */
-		.region-sidebar-second{
-			@include span(4 omega);
-		}
+	article{
+		@include span(12 omega);
+		outline: 1px solid $clr-gray;
 	}
-}
+	
+	#block-views-biographies-block{
+		@include span(12 omega);
+		outline: 1px solid $clr-gray;
+	}
 
-
-//@include susy-breakpoint($bp-desktop, 16){//
-
-//	#main{
-//		clear: both;
-////		background-color: $clr-drk-gray;
-//	}//
-
-//	aside{
-//		@include span(4);		
-////		@include span(isolate 4 at 0 of 16);
-////		position: absolute;
-////		top: 10px;
-//		margin-top: -560px;
-//	}//
-
-//	article{
+	#block-block-3{
 //		@include span(12 omega);
-//		outline: 1px solid $clr-gray;
-//	}
-//	
-//	#block-views-biographies-block{
-//		@include span(12 omega);
-//		outline: 1px solid $clr-gray;
-//	}//
-
-//	#block-block-3{
-////		@include span(12 omega);
-////		@include span(11 omega);
-////		@include span(12 at 5 omega);
-////		@include span(12 at 5);
-////		@include span(6);
-////		@include span(6 at 5 of 16);	
+//		@include span(11 omega);
+//		@include span(12 at 5 of 16 omega);
+//		@include span(12 at 5);
+//		@include span(6);
+//		@include span(6 at 5 of 16);	
 //		@include span(isolate 4 at 5 of 16);
-////		@include span(4);
-//		outline: 1px solid $clr-gray;
-//		clear: right;
-//	}//
+		@include span(4);
+		outline: 1px solid $clr-gray;
+		clear: right;
+	}
 
 //	#block-block-8{
 ////		@include span(12 omega);
@@ -213,6 +217,6 @@
 //		@include span(4 omega);
 //		outline: 1px solid $clr-gray;
 //	}
-//}
+}
 
 

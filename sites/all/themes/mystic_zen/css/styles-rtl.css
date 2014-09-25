@@ -35,37 +35,9 @@ ul {
  * For screen sizes larger than 1200px, prevent excessively long lines of text
  * by setting a max-width.
  */
-/* line 13, ../sass/layouts/_responsive.scss */
+/* line 21, ../sass/layouts/_responsive.scss */
 .front #content .page__title {
   text-align: center;
-}
-
-/* line 18, ../sass/layouts/_responsive.scss */
-#main {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 12, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
-#main:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-/* line 22, ../sass/layouts/_responsive.scss */
-.region-sidebar-first,
-.region-sidebar-second {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 12, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
-.region-sidebar-first:after,
-.region-sidebar-second:after {
-  content: " ";
-  display: block;
-  clear: both;
 }
 
 /**
@@ -78,58 +50,42 @@ ul {
 * Use 16 grid columns for Larger screens.
 **/
 @media (min-width: 1440px) {
-  /**
-  * The Layout when there are no sidebars.
-  **/
-  /* line 121, ../sass/layouts/_responsive.scss */
-  .no-sidebars #content {
+  /* line 168, ../sass/layouts/_responsive.scss */
+  #main {
     clear: both;
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
   }
 
-  /**
-  * The Layout when there is only one sidebar, the left one.
-  **/
-  /* line 129, ../sass/layouts/_responsive.scss */
-  .sidebar-first {
-    /* Span 12 columns, starting in the 5th column from the left */
-    /* Span 4 columns, starting in the 1st column from the left */
-  }
-  /* line 132, ../sass/layouts/_responsive.scss */
-  .sidebar-first #content article {
-    width: 74.68354%;
-    float: right;
-    margin-right: 0;
-  }
-  /* line 139, ../sass/layouts/_responsive.scss */
-  .sidebar-first .region-sidebar-first aside {
+  /* line 173, ../sass/layouts/_responsive.scss */
+  aside {
     width: 24.05063%;
     float: left;
     margin-right: 1.26582%;
+    margin-top: -560px;
   }
 
-  /**
-  * The Layout when there is only one sidebar, the right one.
-  **/
-  /* line 148, ../sass/layouts/_responsive.scss */
-  .sidebar-second {
-    /* Span 12 columns, starting in the 5th column from the left */
-    /* Span 4 columns, starting in the 1st column from the left */
-  }
-  /* line 150, ../sass/layouts/_responsive.scss */
-  .sidebar-second #content {
+  /* line 181, ../sass/layouts/_responsive.scss */
+  article {
     width: 74.68354%;
-    float: left;
-    margin-right: 1.26582%;
-  }
-  /* line 155, ../sass/layouts/_responsive.scss */
-  .sidebar-second .region-sidebar-second {
-    width: 24.05063%;
     float: right;
     margin-right: 0;
+    outline: 1px solid #999999;
+  }
+
+  /* line 186, ../sass/layouts/_responsive.scss */
+  #block-views-biographies-block {
+    width: 74.68354%;
+    float: right;
+    margin-right: 0;
+    outline: 1px solid #999999;
+  }
+
+  /* line 191, ../sass/layouts/_responsive.scss */
+  #block-block-3 {
+    width: 24.05063%;
+    float: left;
+    margin-right: 1.26582%;
+    outline: 1px solid #999999;
+    clear: right;
   }
 }
 /* Component (SMACSS module) rules */
