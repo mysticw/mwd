@@ -30,12 +30,15 @@ ul {
  * RTL companion for the layout-responsive.css file.
  */
 /**
+* Configuring Susy defaults
+**/
+/**
  * Center the page.
  *
  * For screen sizes larger than 1200px, prevent excessively long lines of text
  * by setting a max-width.
- */
-/* line 22, ../sass/layouts/_responsive.scss */
+ **/
+/* line 28, ../sass/layouts/_responsive.scss */
 .front #content .page__title {
   text-align: center;
 }
@@ -43,63 +46,200 @@ ul {
 /**
  * Use 4 grid columns for smaller screens.
  **/
+@media (min-width: 320px) {
+  /* line 42, ../sass/layouts/_responsive.scss */
+  .no-sidebars #header {
+    padding: .5em;
+  }
+  /* line 46, ../sass/layouts/_responsive.scss */
+  .no-sidebars .header__region {
+    padding-left: 185px;
+  }
+  /* line 51, ../sass/layouts/_responsive.scss */
+  .no-sidebars #triptych .region-triptych-first,
+  .no-sidebars #triptych .region-triptych-second,
+  .no-sidebars #triptych .region-triptych-third {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* line 62, ../sass/layouts/_responsive.scss */
+  .sidebar-first article {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 65, ../sass/layouts/_responsive.scss */
+  .sidebar-first aside {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 69, ../sass/layouts/_responsive.scss */
+  .sidebar-first #header {
+    padding: .5em;
+  }
+  /* line 73, ../sass/layouts/_responsive.scss */
+  .sidebar-first .header__region {
+    padding-left: 185px;
+  }
+  /* line 78, ../sass/layouts/_responsive.scss */
+  .sidebar-first #triptych .region-triptych-first,
+  .sidebar-first #triptych .region-triptych-second,
+  .sidebar-first #triptych .region-triptych-third {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 86, ../sass/layouts/_responsive.scss */
+  .sidebar-first #footer-columns .region-footer-firstcolumn,
+  .sidebar-first #footer-columns .region-footer-secondcolumn,
+  .sidebar-first #footer-columns .region-footer-thirdcolumn,
+  .sidebar-first #footer-columns .region-footer-fourthcolumn {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 /**
 * Use 8 grid columns for tablet screens.
 **/
 /**
 * Use 16 grid columns for Larger screens.
 **/
-@media (min-width: 1440px) {
-  /* line 169, ../sass/layouts/_responsive.scss */
-  #main {
+@media (min-width: 1400px) {
+  /**
+  * The Layout when there are no sidebars.
+  **/
+  /* line 129, ../sass/layouts/_responsive.scss */
+  .no-sidebars #content {
     clear: both;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  /* line 174, ../sass/layouts/_responsive.scss */
-  aside {
+  /**
+  * The Layout when there is only one sidebar, the left one.
+  **/
+  /* line 137, ../sass/layouts/_responsive.scss */
+  .sidebar-first {
+    /* Span 12 columns, starting in the 5th column from the left */
+    /* Span 4 columns, starting in the 1st column from the left */
+  }
+  /* line 140, ../sass/layouts/_responsive.scss */
+  .sidebar-first article {
+    width: 74.68354%;
+    float: right;
+    margin-right: 0;
+    outline: 1px solid #999999;
+  }
+  /* line 146, ../sass/layouts/_responsive.scss */
+  .sidebar-first aside {
     width: 24.05063%;
     float: left;
     margin-right: 1.26582%;
-    margin-top: -560px;
+    outline: 1px solid #999999;
   }
-
-  /* line 182, ../sass/layouts/_responsive.scss */
-  article {
+  /* line 151, ../sass/layouts/_responsive.scss */
+  .sidebar-first #block-views-biographies-block {
+    width: 74.68354%;
+    float: right;
+    margin-right: 0;
+    outline: 1px solid #999999;
+  }
+  /* line 156, ../sass/layouts/_responsive.scss */
+  .sidebar-first #block-block-3 {
+    width: 74.68354%;
+    float: right;
+    margin-right: 0;
+    outline: 1px solid #999999;
+  }
+  /* line 164, ../sass/layouts/_responsive.scss */
+  .sidebar-first #block-block-8 {
+    width: 74.68354%;
+    float: right;
+    margin-right: 0;
+    outline: 1px solid #999999;
+  }
+  /* line 171, ../sass/layouts/_responsive.scss */
+  .sidebar-first #block-block-9 {
     width: 74.68354%;
     float: right;
     margin-right: 0;
     outline: 1px solid #999999;
   }
 
-  /* line 187, ../sass/layouts/_responsive.scss */
-  #block-views-biographies-block {
+  /**
+  * The Layout when there is only one sidebar, the right one.
+  **/
+  /* line 183, ../sass/layouts/_responsive.scss */
+  .sidebar-second {
+    /* Span 12 columns, starting in the 1st column from the left */
+    /* Span 12 columns, starting in the 1st column from the left */
+    /* Span 4 columns, starting in the 13th column from the left */
+  }
+  /* line 186, ../sass/layouts/_responsive.scss */
+  .sidebar-second article {
     width: 74.68354%;
-    float: right;
-    margin-right: 0;
+    float: left;
+    margin-right: 1.26582%;
     outline: 1px solid #999999;
   }
-
   /* line 192, ../sass/layouts/_responsive.scss */
-  #block-block-3 {
-    width: 24.05063%;
+  .sidebar-second .view-articles {
+    width: 74.68354%;
     float: left;
     margin-right: 1.26582%;
     outline: 1px solid #999999;
-    clear: right;
   }
-
-  /* line 205, ../sass/layouts/_responsive.scss */
-  #block-block-8 {
+  /* line 198, ../sass/layouts/_responsive.scss */
+  .sidebar-second aside {
     width: 24.05063%;
-    float: left;
-    margin-left: 50.63291%;
-    margin-right: -100%;
+    float: right;
+    margin-right: 0;
     outline: 1px solid #999999;
   }
 
-  /* line 214, ../sass/layouts/_responsive.scss */
-  #block-block-9 {
-    width: 24.05063%;
+  /**
+  * The Layout when there are two sidebars
+  **/
+  /* line 207, ../sass/layouts/_responsive.scss */
+  .two-sidebars {
+    /* Span 10 columns, starting in the 4th column from the left */
+    /* Span 10 columns, starting in the 4th column from the left */
+  }
+  /* line 210, ../sass/layouts/_responsive.scss */
+  .two-sidebars article {
+    width: 62.02532%;
+    float: left;
+    margin-right: 1.26582%;
+    outline: 1px solid #999999;
+  }
+  /* line 216, ../sass/layouts/_responsive.scss */
+  .two-sidebars .view-articles {
+    width: 62.02532%;
+    float: left;
+    margin-right: 1.26582%;
+    outline: 1px solid #999999;
+  }
+  /* line 223, ../sass/layouts/_responsive.scss */
+  .two-sidebars aside .region-sidebar-first {
+    width: 17.72152%;
+    float: left;
+    margin-right: 1.26582%;
+    outline: 1px solid #999999;
+  }
+  /* line 227, ../sass/layouts/_responsive.scss */
+  .two-sidebars aside .region-sidebar-second {
+    width: 17.72152%;
     float: right;
     margin-right: 0;
     outline: 1px solid #999999;

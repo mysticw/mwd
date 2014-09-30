@@ -31,17 +31,28 @@
 
 //main content styling
 
-//body{
-//	@include breakpoint($bp-handheld) {
-//		background: $clr-gray;
-//	}
-//	@include breakpoint($bp-tablet) {
-//		background: $red;
-//	}
-//	@include breakpoint($bp-desktop) {
-//		background: $clr-lt-blue;
-//	}
-//}
+/**
+* Breakpoint testing
+**/
+
+body{
+	@include breakpoint($bp-handheld) {
+		background: $clr-gray;
+	}
+	@include breakpoint($bp-tablet) {
+		background: $red;
+	}
+	@include breakpoint($bp-desktop) {
+		background: $clr-lt-blue;
+	}
+	@include breakpoint($bp-wide){
+		background: $clr-lt-gray;
+	}
+}
+
+/**
+* End Breakpoint testing
+**/
 
 article p{
 	text-align: center;
