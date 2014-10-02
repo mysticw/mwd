@@ -4,10 +4,10 @@
 **/
 
 $susy: (
-	columns: 16,
+//	columns: 16,
 	global-box-sizing: border-box,
 	debug: (
-		image: show,
+		image: show-columns,
 		color: rgba(#66f, .25),
 //		output: overlay,
 //		toggle: top right,
@@ -38,6 +38,10 @@ $susy: (
 
 @include susy-breakpoint($bp-handheld, 4){
 
+	#main{
+		@include container();
+	}
+
 	.no-sidebars{
 		#header{
 			padding: .5em;
@@ -55,8 +59,6 @@ $susy: (
 			}
 		}						
 	}
-
-
 
 	.sidebar-first{
 		article{
@@ -100,6 +102,135 @@ $susy: (
 
 @include susy-breakpoint($bp-tablet, 8){
 
+#main{
+	@include container();
+}
+
+	.no-sidebars{
+
+		#header{
+			padding: .5em;
+		}
+
+		.header__region{
+			padding-left: 120px;
+		}
+
+		#triptych{
+			.region-triptych-first{
+				@include gallery(1 of 3);
+			}
+			.region-triptych-second{
+				@include gallery(1 of 3);
+			}
+			.region-triptych-third{
+				@include gallery(1 of 3);
+				&:last-child{
+					@include last;
+				}
+			}
+		}
+
+		#footer-columns{
+			.region-footer-firstcolumn,
+			.region-footer-secondcolumn,{
+				@include span(4);
+				&:last-child{
+					@include last;
+				}
+			}
+			.region-footer-thirdcolumn,
+			.region-footer-fourthcolumn{
+				@include span(4);
+				&:last-child{
+					@include last;
+				}
+			}
+		}
+
+	}
+
+	.sidebar-first{
+		article{
+			@include span(6 omega);
+			outline: 1px solid $clr-gray;
+		}
+		aside{
+			@include span(2 first);
+//			@include first;
+			outline: 1px solid $clr-gray;
+		}
+
+		#header{
+			padding: .5em;
+		}
+
+		.header__region{
+			padding-left: 120px;
+		}
+
+		#block-views-biographies-block{
+			@include span(6 omega);
+			outline: 1px solid $clr-gray;
+			clear: both;
+		}
+
+		#block-block-3{
+			@include span(isolate 2 at 3 of 8);
+//			@include gallery(1 of 3);
+			outline: 1px solid $clr-gray;
+			clear: both;
+		}
+
+		#block-block-8{
+			@include span(isolate 2 at 5 of 8);
+//			@include gallery(1 of 3);
+			outline: 1px solid $clr-gray;
+			clear: both;
+		}		
+
+		#block-block-9{
+			@include span(isolate 2 at 7 of 8);
+//			@include gallery(1 of 3);
+			outline: 1px solid $clr-gray;
+		}
+
+		#triptych{
+//			.region{
+//				padding: gutter();
+//			}
+			.region-triptych-first{
+				@include gallery(1 of 3);
+			}
+			.region-triptych-second{
+				@include gallery(1 of 3);
+			}
+			.region-triptych-third{
+				@include gallery(1 of 3);
+				&:last-child{
+					@include last;
+				}
+			}
+		}
+
+		#footer-columns{
+			.region-footer-firstcolumn,
+			.region-footer-secondcolumn,{
+				@include span(4);
+				&:last-child{
+					@include last;
+				}
+			}
+			.region-footer-thirdcolumn,
+			.region-footer-fourthcolumn{
+				@include span(4);
+				&:last-child{
+					@include last;
+				}
+			}
+		}
+	}	
+
 }
 
  /**
@@ -109,6 +240,9 @@ $susy: (
 
 @include susy-breakpoint($bp-desktop, 16){
 
+#main{
+	@include container();
+}
 
 
 }
@@ -122,6 +256,11 @@ $susy: (
 
 
 @include susy-breakpoint($bp-wide, 16){
+
+#main{
+	@include container();
+}
+
 	/**
 	* The Layout when there are no sidebars.
 	**/
