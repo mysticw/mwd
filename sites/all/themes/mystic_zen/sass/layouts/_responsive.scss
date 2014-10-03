@@ -152,11 +152,14 @@ $susy: (
 
 	.sidebar-first{
 		article{
-			@include span(6 omega);
+//			@include span(6 omega);
+			width: span(6 of 8);
+			@include isolate(3 of 8);
 			outline: 1px solid $clr-gray;
 		}
 		aside{
-			@include span(2 first);
+			width:  span(2 of 8);
+			@include isolate(0);
 //			@include first;
 			outline: 1px solid $clr-gray;
 		}
@@ -171,27 +174,29 @@ $susy: (
 
 		#block-views-biographies-block{
 			@include span(6 omega);
+//			width: span(6 of 8);
+//			@include isolate(3 of 8);
 			outline: 1px solid $clr-gray;
-			clear: both;
 		}
 
 		#block-block-3{
-			@include span(isolate 2 at 3 of 8);
-//			@include gallery(1 of 3);
+			@include span(6 omega);
+//			width: span(6 of 8);
+//			@include isolate(3 of 8);
 			outline: 1px solid $clr-gray;
-			clear: both;
 		}
 
 		#block-block-8{
-			@include span(isolate 2 at 5 of 8);
-//			@include gallery(1 of 3);
+			@include span(6 omega);
+//			width: span(6 of 8);
+//			@include isolate(3 of 8);
 			outline: 1px solid $clr-gray;
-			clear: both;
 		}		
 
 		#block-block-9{
-			@include span(isolate 2 at 7 of 8);
-//			@include gallery(1 of 3);
+			@include span(6 omega);
+//			width: span(6 of 8);
+//			@include isolate(3 of 8);
 			outline: 1px solid $clr-gray;
 		}
 
@@ -277,38 +282,49 @@ $susy: (
 
 		/* Span 12 columns, starting in the 5th column from the left */
 		article{
-			@include span(12 omega);
+//			@include span(12 omega);
+			width: span(12 of 16);
+			@include isolate(5 of 16);
 			outline: 1px solid $clr-gray;
 		}
 				
 		/* Span 4 columns, starting in the 1st column from the left */
 		aside{
-			@include span(4 first);
+//			@include span(4);
+			width: span(4 of 16);
+			@include isolate(0);
 			outline: 1px solid $clr-gray;
 		}
 
 		#block-views-biographies-block{
-			@include span(12 omega);
+//			@include span(12 omega);
+			width: span(12 of 16);
+			@include isolate(5 of 16);
 			outline: 1px solid $clr-gray;
 		}
 
 		#block-block-3{
-			@include span(12 omega);
+//			@include span(12 omega);
+			width: span(4);
+			@include isolate(5 of 16);
 //			@include span(4 of 12)
 //			@include span(isolate 4 at 5 of 16); //THIS WORKS
 			outline: 1px solid $clr-gray;
-//			clear: right;
 		}	
 
 		#block-block-8{
-			@include span(12 omega);
+//			@include span(12 omega);
+			width: span(4 of 16);
+			@include isolate(9 of 16);
 //			@include span(4 of 12); // THIS WORKS
 //			@include span(isolate 4 at 9 of 16);
 			outline: 1px solid $clr-gray;
 		}
 
 		#block-block-9{
-			@include span(12 omega);
+//			@include span(12 omega);
+			width: span(4 of 16);
+			@include isolate(13 of 16);
 //			@include span(4 of 12 omega);
 //			@include span(isolate 4 at 13 of 16 omega); // THIS WORKS
 			outline: 1px solid $clr-gray;
@@ -347,7 +363,9 @@ $susy: (
 
 		/* Span 10 columns, starting in the 4th column from the left */
 		article{
-			@include span(10);
+//			@include span(10);
+			width: span(10 of 16);
+			@include isolate(4 of 16);
 			outline: 1px solid $clr-gray;
 		}
 
