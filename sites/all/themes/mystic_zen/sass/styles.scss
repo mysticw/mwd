@@ -54,6 +54,8 @@ body{
 * End Breakpoint testing
 **/
 
+
+
 article p{
 	text-align: center;
 }
@@ -131,6 +133,33 @@ article p{
 	clear: both;
 }
 
+//Project Node Styling
 
+.field-name-field-project-image{
+	
+	img{
+		border-bottom: 5px solid $black;
+	}
+}
 
+.node-project{
+
+	.field-name-field-project-additional-images{
+		background: $clr-gray;
+//		padding: 10px 5px;
+		
+		.field-label{
+			padding: 5px 0 5px 20px;
+		}
+
+		.field-items{
+//			padding-top: 10px;
+			padding-left: 20px;
+
+			.field-item{
+				padding-bottom: 5px;
+			}
+		}
+	}
+}
 

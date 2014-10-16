@@ -12,6 +12,7 @@ $susy: (
 //		output: overlay,
 //		toggle: top right,
 	),
+	output: float,
 );
 
 
@@ -43,13 +44,13 @@ $susy: (
 	}
 
 	.no-sidebars{
-		#header{
-			padding: .5em;
-		}
+//		#header{
+//			padding: .5em;
+//		}
 
-		.header__region{
-			padding-left: 185px;
-		}
+//		.header__region{
+//			padding-left: 185px;
+//		}
 
 		#triptych{
 			.region-triptych-first,
@@ -68,13 +69,13 @@ $susy: (
 			@include span(4);
 		}
 
-		#header{
-			padding: .5em;
-		}
+//		#header{
+//			padding: .5em;
+//		}//
 
-		.header__region{
-			padding-left: 185px;
-		}
+//		.header__region{
+//			padding-left: 185px;
+//		}
 
 		#triptych{
 			.region-triptych-first,
@@ -107,14 +108,6 @@ $susy: (
 }
 
 	.no-sidebars{
-
-		#header{
-			padding: .5em;
-		}
-
-		.header__region{
-			padding-left: 120px;
-		}
 
 		#triptych{
 			.region-triptych-first{
@@ -151,33 +144,26 @@ $susy: (
 	}
 
 	.sidebar-first{
+
 		article{
 //			@include span(6 omega);
 			width: span(6 of 8);
 			@include isolate(3 of 8);
 			outline: 1px solid $clr-gray;
 		}
-		aside{
-			width:  span(2 of 8);
-			@include isolate(0);
-//			@include first;
-			outline: 1px solid $clr-gray;
-		}
 
-		#header{
-			padding: .5em;
-		}
+//		aside{
+//			width: span(2 of 8);
+//			@include isolate(0);
+//			outline: 1px solid $clr-gray;
+//		}
 
-		.header__region{
-			padding-left: 120px;
-		}
-
-		#block-views-biographies-block{
-			@include span(6 omega);
+//		#block-views-biographies-block{
+//			@include span(6 omega);
 //			width: span(6 of 8);
 //			@include isolate(3 of 8);
-			outline: 1px solid $clr-gray;
-		}
+//			outline: 1px solid $clr-gray;
+//		}
 
 		#block-block-3{
 			@include span(6 omega);
@@ -234,6 +220,43 @@ $susy: (
 				}
 			}
 		}
+	}
+
+	.sidebar-second{
+
+		/* Span 2 columns, starting in the 6th column from the left */
+		aside{
+			@include span(2 omega);
+			outline: 1px solid $clr-gray;
+		}		
+
+		.field-name-field-client-name{
+			@include span(4 of 8);
+		}
+
+		.field-name-field-project-link{
+			@include span(4 of 8);
+		}
+
+		.field-name-field-project-category{
+			@include span(4 of 8);
+		}	
+
+		.field-name-field-service-provided{
+			@include span(4 of 8);
+		}		
+
+		.field-name-field-project-additional-images{
+			@include span(4 at 5 of 8);
+
+			.field-items{
+
+				.field-item{
+					@include gallery(1 of 4);
+				}
+			}
+		}
+
 	}	
 
 }
@@ -262,9 +285,9 @@ $susy: (
 
 @include susy-breakpoint($bp-wide, 16){
 
-#main{
-	@include container();
-}
+	#main{
+		@include container();
+	}
 
 	/**
 	* The Layout when there are no sidebars.
@@ -275,61 +298,73 @@ $susy: (
 		}
 	}	
 
+
 	/**
 	* The Layout when there is only one sidebar, the left one.
 	**/
-	.sidebar-first{
+//	.sidebar-first{
+	.one-sidebar{	
 
 		/* Span 12 columns, starting in the 5th column from the left */
 		article{
-//			@include span(12 omega);
-			width: span(12 of 16);
-			@include isolate(5 of 16);
+			@include span(12 omega);
+//			width: span(12 of 16);
+//			@include isolate(5 of 16);
+			margin-bottom: gutter();
 			outline: 1px solid $clr-gray;
 		}
+
+		/* Span 12 columns, starting in the 4th column from the left */
+		.view-articles{
+			@include span(12);
+			outline: 1px solid $clr-gray;
+		}		
 				
 		/* Span 4 columns, starting in the 1st column from the left */
 		aside{
 //			@include span(4);
-			width: span(4 of 16);
-			@include isolate(0);
-			outline: 1px solid $clr-gray;
+			width: span(4);
+			@include isolate(4 at 0);
+//			@include span(4 at 0 alpha);
+//			width: span(4 of 16);
+			outline: 1px solid $clr-gray;			
 		}
 
 		#block-views-biographies-block{
-//			@include span(12 omega);
 			width: span(12 of 16);
 			@include isolate(5 of 16);
+//			width: span(12 of 16);
+//			@include isolate(5 of 16);
 			outline: 1px solid $clr-gray;
+//			@include clearfix;
 		}
 
-		#block-block-3{
+//		#block-block-3{
 //			@include span(12 omega);
-			width: span(4);
-			@include isolate(5 of 16);
-//			@include span(4 of 12)
+//			width: span(4);
+//			@include isolate(5 of 16);
+//			@include span(4 of 12);
 //			@include span(isolate 4 at 5 of 16); //THIS WORKS
-			outline: 1px solid $clr-gray;
-		}	
+//			outline: 1px solid $clr-gray;
+//		}	
 
-		#block-block-8{
+//		#block-block-8{
 //			@include span(12 omega);
-			width: span(4 of 16);
-			@include isolate(9 of 16);
+//			width: span(4 of 16);
+//			@include isolate(9 of 16);
 //			@include span(4 of 12); // THIS WORKS
 //			@include span(isolate 4 at 9 of 16);
-			outline: 1px solid $clr-gray;
-		}
+//			outline: 1px solid $clr-gray;
+//		}
 
-		#block-block-9{
+//		#block-block-9{
 //			@include span(12 omega);
-			width: span(4 of 16);
-			@include isolate(13 of 16);
+//			width: span(4 of 16);
+//			@include isolate(13 of 16);
 //			@include span(4 of 12 omega);
 //			@include span(isolate 4 at 13 of 16 omega); // THIS WORKS
-			outline: 1px solid $clr-gray;
-		}					
-		
+//			outline: 1px solid $clr-gray;
+//		}			
 	}	
 
 	/**
@@ -341,7 +376,7 @@ $susy: (
 		article{
 			@include span(12);
 			outline: 1px solid $clr-gray;
-		}		
+		}	
 
 		/* Span 12 columns, starting in the 1st column from the left */
 		.view-articles{
@@ -354,6 +389,57 @@ $susy: (
 			@include span(4 omega);
 			outline: 1px solid $clr-gray;
 		}
+
+
+		.field-name-field-project-image{
+//			@include isolate(5 of 12);
+		}
+
+//		.field-name-body{
+//			@include span(4 of 12);
+//		}
+
+		.field-name-field-client-name{
+			@include span(3 of 12);
+		}
+
+		.field-name-field-project-link{
+			@include span(3 of 12);
+		}
+
+		.field-name-field-project-category{
+			@include span(3 of 12);
+		}
+
+		.field-name-field-service-provided{
+			@include span(3 of 12);
+		}
+
+		.field-name-field-project-additional-images{
+			@include span(3 at 5 of 12);
+
+			.field-items{
+
+				.field-item{
+					@include gallery(1 of 3);
+				}
+			}
+		}
+
+		.node-project{
+
+			.field-name-body{
+				@include span(4 of 12);
+			}
+		}
+
+		.node-article{
+
+			.field-name-body{
+				@include full;
+			}
+		}
+
 	}
 
 	/**
@@ -371,7 +457,8 @@ $susy: (
 
 		/* Span 10 columns, starting in the 4th column from the left */
 		.view-articles{
-			@include span(10);
+			width: span(10 of 16);
+			@include isolate(4 of 16);
 			outline: 1px solid $clr-gray;
 		}
 

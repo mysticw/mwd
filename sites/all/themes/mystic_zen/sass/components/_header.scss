@@ -2,6 +2,7 @@
 	background: $black;
 //	padding: 1em;
 	height: $nav-height;
+	padding: .5em;
 }
 
 .header__region{
@@ -9,6 +10,7 @@
 	float: left;
 //	padding-left: 150px;
 	padding-top: 10px;
+	padding-left: 120px;
 }
 
 .sf-menu li{
@@ -33,3 +35,6 @@
 	background: url('../images/nav-arrow.png') no-repeat 50% 50px;
 	height: 62px;
 }
+
+
+
