@@ -2304,24 +2304,34 @@ article p {
   clear: both;
 }
 
+/* line 136, ../sass/styles.scss */
+.region-footer {
+  float: right;
+}
+
 /* line 140, ../sass/styles.scss */
+#block-menu-menu-policy-menu {
+  margin-left: 295px;
+}
+
+/* line 148, ../sass/styles.scss */
 .field-name-field-project-image img {
   border-bottom: 5px solid black;
 }
 
-/* line 147, ../sass/styles.scss */
+/* line 155, ../sass/styles.scss */
 .node-project .field-name-field-project-additional-images {
   background: #999999;
 }
-/* line 151, ../sass/styles.scss */
+/* line 159, ../sass/styles.scss */
 .node-project .field-name-field-project-additional-images .field-label {
   padding: 5px 0 5px 20px;
 }
-/* line 155, ../sass/styles.scss */
+/* line 163, ../sass/styles.scss */
 .node-project .field-name-field-project-additional-images .field-items {
   padding-left: 20px;
 }
-/* line 159, ../sass/styles.scss */
+/* line 167, ../sass/styles.scss */
 .node-project .field-name-field-project-additional-images .field-items .field-item {
   padding-bottom: 5px;
 }
