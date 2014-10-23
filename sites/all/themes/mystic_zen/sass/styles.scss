@@ -65,6 +65,7 @@ article p{
 .flexslider{
 	margin: 0;
 	border: 0;
+	height: 503px;
 }
 
 #transpbody{
@@ -89,10 +90,29 @@ article p{
 }
 
 .flex-control-nav{
-	z-index:	10;
-	bottom:	14em;
+	z-index: 10;
+	bottom:	0;
 	width:	15%;
 	right:	0;
+}
+
+.page-node-4{
+	.flex-control-nav{
+		z-index: 100;
+
+		.flex-control-paging{
+			li a{
+				background-color: rgba(255,255,255,0.5);
+			}
+		}
+	}
+
+	#content{
+
+		.page__title{
+			text-align: center;
+		}
+	}
 }
 
 #navigation{
@@ -104,28 +124,135 @@ article p{
 	left: 232px;
 }
 
-//Portfolio slider styling
+/*Portfolio slider styling
+--------------------------------------------------------*/
 
-//#prjinfo{
-//	position: relative;
-//	top: -320px;
-//	right: -55em;
-//	background-color: rgba(0,0,0,.5);
-//	padding: 1em;
-//	width: 18em;
-//}//
+.slides{
 
-//#prjbody{
-//	color: $white;
-//	z-index:2;
-//}//
+	.views-field-body{
+		background-color: rgba(0,0,0,0.5);
+		position: absolute;
+		bottom: 0;
+		left: 57%;
+		width: 25%;
 
-//.view-portfolio-view .flex-control-nav{
-//	z-index: 10;
-//	bottom:	21em;
-//	width:	15%;
-//	right:	1.5em;
-//}
+		#prjinfo{
+			padding: 10px 15px;
+
+			#prjtitle{
+
+				a{
+					color: $clr-orange;
+					text-decoration: none;
+				}
+			}
+
+			#prjbody{
+
+				p{
+					color: $white;
+					margin-top: 0.5em 0;
+				}
+			}
+		}
+	}
+}
+
+
+/* Portfolio Filter Styles
+------------------------------------------------------*/
+
+#block-views-projects-block-4{
+
+	h2.block__title.block-title{
+		text-align: center;
+	}
+
+	.views-exposed-form,
+	.views-exposed-widget {
+		float: none;
+		padding: 0.5em 1em 0 1em;
+		margin: auto;
+		width: 79%;
+	}	
+
+	.bef-select-as-links {
+		background: rgba(29, 28, 28, 0.24);
+		border-radius: 0.25em;
+		padding: 0.5em 0.5em;
+		text-align: center;
+
+		.form-item{
+
+			.form-item{
+				display: inline-block;
+				padding: 0.25em 1em;
+
+				&.selected{
+					font-weight: bold;
+					text-transform: uppercase;
+
+				}
+
+				a{
+					color: $black;
+					text-decoration: none;
+
+					&:hover{
+						color: $white;
+					}
+				}
+
+				.form-item{
+					border-right: 1px solid $black;
+
+					&:last-child{
+						border-right: none;
+					}
+
+				}
+			}
+		}	
+	}
+
+	/* Portfolio Image Grid Styles
+	----------------------------------------*/
+
+	table.views-view-grid.cols-4{
+		margin: 1.4em auto;
+
+		td{
+			padding: 0 .75em 1.25em 0;
+
+			&:last-child{
+				padding-right: 0;
+			}
+
+			.views-field-title{
+				text-align: center;
+			}
+
+			span a{
+				color: $black;
+				text-decoration: none;
+			}
+
+			a img{
+				//padding: 5px 5px 5px 5px;
+				//border: 1px solid #ccc;
+				//margin-bottom: 10px;
+
+				&:hover{
+					//border: 5px solid $clr-orange;
+					//border-style: inset;
+				}
+
+			}
+		}
+	}	
+
+}
+
 
 //Footer styling
 
@@ -170,4 +297,69 @@ article p{
 		}
 	}
 }
+
+/* Blog styling
+---------------------------------------------------- */
+.page-blog{
+
+	.view-id-articles{
+		margin-bottom: 1.75em;
+
+		.views-row{
+			border-bottom: 1px solid $clr-lt-gray;
+			margin-bottom: 1.75em;
+
+			.views-field-created-2{
+				height: 60px;
+				width: 45px;
+				text-transform: uppercase;
+				float: left;
+				position: relative;
+				top: -25px;
+
+				.date-date{
+					text-align: center;
+					background-color: $white;
+
+					.date-month{
+						padding: 2px 10px 5px 10px;
+						background-color: $clr-orange;
+					}
+
+					.date-day{
+						font-weight: bold;
+						line-height: 1.25em;
+						font-size: x-large;
+					}
+				}
+			}
+
+			.views-field-title{
+				position: relative;
+				left: 4.5em;
+				top: -6px;
+
+				a{
+					color: $black;
+					text-decoration: none;
+				}
+			}
+
+			.views-field-body{
+				position: relative;
+				left: 6px;
+			}
+		}		
+	}
+
+//	.date-date{
+//		width: 45px;
+//		height: 60px;
+//		float: left;
+//		margin-top: -30px;
+//		background: $white;
+//	}
+
+}
+
 

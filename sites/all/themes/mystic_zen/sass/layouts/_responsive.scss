@@ -289,12 +289,27 @@ $susy: (
 		@include container();
 	}
 
+
 	/**
 	* The Layout when there are no sidebars.
 	**/
 	.no-sidebars{
+
 		#content{
 			@include full;
+
+			.page__title{
+				width: span(15);
+				@include push(1);
+				outline: 1px solid $clr-gray;
+			}
+
+			nav.breadcrumb{
+				width: span(14);
+				@include isolate(14 at 3);
+				outline: 1px solid $clr-gray;
+				clear: both;
+			}
 		}
 	}	
 
@@ -304,6 +319,20 @@ $susy: (
 	**/
 //	.sidebar-first{
 	.one-sidebar{	
+
+		.page__title{
+			width:  span(15);
+//			@include isolate(15 at 2);
+			@include push(1);
+			outline: 1px solid $clr-gray;
+		}
+
+		nav.breadcrumb{
+			width: span(14);
+			@include isolate(14 at 3);
+			outline: 1px solid $clr-gray;
+			clear: both;
+		}
 
 		/* Span 12 columns, starting in the 5th column from the left */
 		article{
@@ -382,6 +411,7 @@ $susy: (
 		.view-articles{
 			@include span(12 alpha);
 			outline: 1px solid $clr-gray;
+			clear: both;
 		}		
 
 		/* Span 4 columns, starting in the 13th column from the left */
