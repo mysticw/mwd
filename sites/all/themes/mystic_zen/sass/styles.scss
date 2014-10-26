@@ -186,7 +186,7 @@ article p{
 
 			.form-item{
 				display: inline-block;
-				padding: 0.25em 1em;
+				padding: 0.25em 4em;
 
 				&.selected{
 					font-weight: bold;
@@ -306,7 +306,7 @@ article p{
 		margin-bottom: 1.75em;
 
 		.views-row{
-			border-bottom: 1px solid $clr-lt-gray;
+			border-bottom: 1px solid $clr-gray;
 			margin-bottom: 1.75em;
 
 			.views-field-created-2{
@@ -322,8 +322,9 @@ article p{
 					background-color: $white;
 
 					.date-month{
-						padding: 2px 10px 5px 10px;
+						padding: 2px 5px;
 						background-color: $clr-orange;
+						display: block;
 					}
 
 					.date-day{
@@ -335,31 +336,120 @@ article p{
 			}
 
 			.views-field-title{
-				position: relative;
-				left: 4.5em;
-				top: -6px;
+				padding-left: 60px;
 
 				a{
 					color: $black;
 					text-decoration: none;
+
+					&:hover{
+						text-decoration: underline;
+					}
 				}
 			}
 
 			.views-field-body{
-				position: relative;
-				left: 6px;
+				padding-left: 60px;
 			}
-		}		
+
+			.views-field-view-node{
+				padding-bottom: 0.75em;
+				padding-left: 60px;
+
+				a{
+					text-decoration: none;
+					background: rgba($clr-blue,0.9);
+					color: $black;
+					padding: .45em .75em;
+					border-radius: .55em;
+
+					&:hover{
+						color: $white;
+					}
+
+				}
+			}
+		}
+
+
 	}
 
-//	.date-date{
-//		width: 45px;
-//		height: 60px;
-//		float: left;
-//		margin-top: -30px;
-//		background: $white;
-//	}
+	.region-sidebar-second{	
+
+		#block-views-articles-block-1{
+
+			.view-id-articles{
+				margin-left: 0;
+
+				.views-row{
+					border-bottom: 0px none;
+					margin-bottom: 0;
+					display: inline-block;
+					margin-bottom: 5px;
+
+					&:last-child{
+						margin-bottom: 0;
+					}
+
+					.views-field-field-tags{
+
+						a{
+							color: $black;
+							text-decoration: none;
+							background: $clr-lt-gray;
+							padding: .25em .5em;
+							font-size: 14px;
+
+							&:hover{
+								color: $white;
+								background: $clr-gray;
+							}
+
+						}
+					}
+				}
+			}
+		}
+	}
+
 
 }
 
+.node-type-article{
+
+	.node-article{
+		margin-bottom: 1.75em;
+
+		.field-name-field-tags{
+
+			.field-items{
+
+				.field-item{
+					display: inline-block;
+					padding-right: .75em;
+
+					&:last-child{
+						padding-right: 0;
+					}
+
+					a{
+						color: $red;
+						text-decoration: none;
+
+						&:hover{
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		.field-name-body{
+
+			p{
+				text-align: justify;
+			}
+		}
+	}
+}
 
