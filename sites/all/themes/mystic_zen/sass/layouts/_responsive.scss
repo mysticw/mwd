@@ -26,7 +26,9 @@ $susy: (
  **/
 
 .fixed-width,
-.header_region_wrapper{
+.header_region_wrapper,
+#footer-columns,
+#footer{
  	max-width: 1200px;
  	margin: 0 auto;
 }

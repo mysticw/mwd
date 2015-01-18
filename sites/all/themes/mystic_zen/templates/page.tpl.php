@@ -114,9 +114,11 @@
     <?php endif; ?>
 
     <?php if ($page['footer']): ?>
+    <div class="inside">
       <div id="footer" class="clearfix">
         <?php print render($page['footer']); ?>
       </div> <!-- /#footer -->
+    </div>
     <?php endif; ?>
 
   </div></div> <!-- /.section, /#footer-wrapper -->

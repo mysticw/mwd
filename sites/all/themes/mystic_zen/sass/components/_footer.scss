@@ -8,8 +8,11 @@
 			color: $white;
 		}
 	}
-	#footer{
+	.inside{
 		background: $clr-drk-gray;
+	}
+	#footer{
+		background: transparent;
 		padding: 10px;
 		color: $white;
 		
