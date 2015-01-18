@@ -25,6 +25,12 @@ $susy: (
  * by setting a max-width.
  **/
 
+.fixed-width,
+.header_region_wrapper{
+ 	max-width: 1200px;
+ 	margin: 0 auto;
+}
+
 .front #content{
 	.page__title{
 		text-align: center;
@@ -310,6 +316,7 @@ $susy: (
 				outline: 1px solid $clr-gray;
 				clear: both;
 			}
+
 		}
 	}	
 
@@ -341,6 +348,7 @@ $susy: (
 //			@include isolate(5 of 16);
 			margin-bottom: gutter();
 			outline: 1px solid $clr-gray;
+			clear: both;
 		}
 
 		/* Span 12 columns, starting in the 4th column from the left */
@@ -356,7 +364,8 @@ $susy: (
 			@include isolate(4 at 0);
 //			@include span(4 at 0 alpha);
 //			width: span(4 of 16);
-			outline: 1px solid $clr-gray;			
+			outline: 1px solid $clr-gray;
+			clear: left;			
 		}
 
 		#block-views-biographies-block{
@@ -367,6 +376,10 @@ $susy: (
 			outline: 1px solid $clr-gray;
 //			@include clearfix;
 		}
+
+		#block-views-projects-block-4{
+			clear: both;
+		}		
 
 //		#block-block-3{
 //			@include span(12 omega);
@@ -477,12 +490,27 @@ $susy: (
 	**/
 	.two-sidebars{
 
+		.page__title{
+			width:  span(15);
+//			@include isolate(15 at 2);
+			@include push(1);
+			outline: 1px solid $clr-gray;
+		}
+
+		nav.breadcrumb{
+			width: span(14);
+			@include isolate(14 at 3);
+			outline: 1px solid $clr-gray;
+			clear: both;
+		}		
+
 		/* Span 10 columns, starting in the 4th column from the left */
 		article{
 //			@include span(10);
 			width: span(10 of 16);
 			@include isolate(4 of 16);
 			outline: 1px solid $clr-gray;
+			clear: both;			
 		}
 
 		/* Span 10 columns, starting in the 4th column from the left */
@@ -490,9 +518,11 @@ $susy: (
 			width: span(10 of 16);
 			@include isolate(4 of 16);
 			outline: 1px solid $clr-gray;
+			clear: both;
 		}
 
 		aside{
+			clear: right;
 			
 			.region-sidebar-first{
 				@include span(3 alpha);

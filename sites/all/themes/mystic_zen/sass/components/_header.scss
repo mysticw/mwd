@@ -4,7 +4,9 @@
 	height: $nav-height;
 	padding: .5em;
 }
-
+.header_region_wrapper{
+	background: transparent;
+}
 .header__region{
 	clear: inherit;
 	float: left;
