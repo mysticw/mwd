@@ -28,7 +28,8 @@ $susy: (
 .fixed-width,
 .header_region_wrapper,
 #footer-columns,
-#footer{
+#footer,
+#triptych{
  	max-width: 1200px;
  	margin: 0 auto;
 }
@@ -320,6 +321,24 @@ $susy: (
 			}
 
 		}
+
+		#footer-columns{
+			.region-footer-firstcolumn,
+			.region-footer-secondcolumn,{
+				@include span(4);
+				&:last-child{
+					@include last;
+				}
+			}
+			.region-footer-thirdcolumn,
+			.region-footer-fourthcolumn{
+				@include span(4);
+				&:last-child{
+					@include last;
+				}
+			}
+		}
+
 	}	
 
 
@@ -408,7 +427,25 @@ $susy: (
 //			@include span(4 of 12 omega);
 //			@include span(isolate 4 at 13 of 16 omega); // THIS WORKS
 //			outline: 1px solid $clr-gray;
-//		}			
+//		}
+
+		#footer-columns{
+			.region-footer-firstcolumn,
+			.region-footer-secondcolumn,{
+				@include span(4);
+				&:last-child{
+					@include last;
+				}
+			}
+			.region-footer-thirdcolumn,
+			.region-footer-fourthcolumn{
+				@include span(4);
+				&:last-child{
+					@include last;
+				}
+			}
+		}
+			
 	}	
 
 	/**

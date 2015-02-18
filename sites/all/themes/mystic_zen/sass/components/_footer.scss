@@ -1,6 +1,8 @@
 #footer-wrapper{
 	background: $clr-lt-gray;
 	border-top: 20px solid $clr-orange;
+	padding-top: 1em;
+
 	a{
 		color: $clr-orange;
 		text-decoration: none;
@@ -23,8 +25,21 @@
 			padding: 0;
 		}
 	}
-	#footer-columns{		
+	#footer-columns{
+
 		.region{
+		}
+
+		#block-views-projects-block{
+			background: $clr-gray;
+			border-radius: 1em;
+			padding: 0.5em 1em 0.5em 1em;
+		}
+
+		#block-on-the-web-0,
+		#block-instagram-block-instagram-block,
+		#block-twitter-block-1{
+			padding-top: 0.5em;
 		}
 //		.region-footer-firstcolumn,
 //		.region-footer-secondcolumn,

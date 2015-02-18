@@ -71,13 +71,17 @@ nav.breadcrumb{
 	margin: 0;
 	border: 0;
 	height: 503px;
+	//position: relative;
 }
 
 #transpbody{
 	position: relative;
-	top: -112px;
+	//top: -112px;
 	background-color: rgba(0,0,0,.7);
 	padding:2em;
+	//z-index: 999999;
+	//height:50px;
+	margin-top: -112px;
 }
 
 #transtitle{
@@ -96,7 +100,7 @@ nav.breadcrumb{
 
 .flex-control-nav{
 	z-index: 10;
-	bottom:	0;
+	bottom:	110px;
 	width:	15%;
 	right:	0;
 }
