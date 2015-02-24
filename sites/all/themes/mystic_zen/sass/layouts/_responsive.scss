@@ -37,9 +37,16 @@ $susy: (
 .front #content{
 	.page__title{
 		text-align: center;
+		margin: 0 auto;
 	}
 }
 
+.section-terms-use,
+.section-privacy-policy{
+	article p{
+		text-align: justify;
+	}
+}
 
 /**
  * Use 4 grid columns for smaller screens.
