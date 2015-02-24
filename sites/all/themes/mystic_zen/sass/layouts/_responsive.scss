@@ -308,16 +308,21 @@ $susy: (
 			@include full;
 
 			.page__title{
-				width: span(15);
-				@include push(1);
+				width: span(14);
+				//@include push(1);
 				outline: 1px solid $clr-gray;
 			}
 
 			nav.breadcrumb{
-				width: span(14);
-				@include isolate(14 at 3);
+				width: span(13);
+				@include isolate(13 at 2);
 				outline: 1px solid $clr-gray;
 				clear: both;
+			}
+
+			.bef-select-as-links{
+				width: span(12);
+				margin: 0 auto;
 			}
 
 		}
@@ -349,15 +354,15 @@ $susy: (
 	.one-sidebar{	
 
 		.page__title{
-			width:  span(15);
+			width:  span(14);
 //			@include isolate(15 at 2);
-			@include push(1);
+			//@include push(1);
 			outline: 1px solid $clr-gray;
 		}
 
 		nav.breadcrumb{
-			width: span(14);
-			@include isolate(14 at 3);
+			width: span(13);
+			@include isolate(13 at 2);
 			outline: 1px solid $clr-gray;
 			clear: both;
 		}
@@ -390,8 +395,14 @@ $susy: (
 		}
 
 		#block-views-biographies-block{
-			width: span(12 of 16);
-			@include isolate(5 of 16);
+			width: span(12);
+			@include isolate(12 at 5);
+//			@include push(4);
+			
+//			@include span(12);
+//			@include push(4);
+			clear: both;
+//			@include isolate(5 of 16);
 //			width: span(12 of 16);
 //			@include isolate(5 of 16);
 			outline: 1px solid $clr-gray;
@@ -453,6 +464,20 @@ $susy: (
 	**/
 	.sidebar-second{
 
+		.page__title{
+			width: span(14);
+//			@include isolate(15 at 2);
+			//@include push(1);
+			outline: 1px solid $clr-gray;
+		}
+
+		nav.breadcrumb{
+			width: span(13);
+			@include isolate(13 at 2);
+			outline: 1px solid $clr-gray;
+			clear: both;
+		}		
+
 		/* Span 12 columns, starting in the 1st column from the left */
 		article{
 			@include span(12);
@@ -470,6 +495,7 @@ $susy: (
 		aside{
 			@include span(4 omega);
 			outline: 1px solid $clr-gray;
+			clear: right;
 		}
 
 

@@ -133,6 +133,13 @@ nav.breadcrumb{
 	left: 232px;
 }
 
+/*Sidebar stylling
+--------------------------------------------------------*/
+
+.region-sidebar-second{
+	border-top: 1px solid $black;
+}
+
 /*Portfolio slider styling
 --------------------------------------------------------*/
 
@@ -182,7 +189,7 @@ nav.breadcrumb{
 		float: none;
 		padding: 0.5em 1em 0 1em;
 		margin: auto;
-		width: 79%;
+//		width: 79%;
 	}	
 
 	.bef-select-as-links {
@@ -195,7 +202,7 @@ nav.breadcrumb{
 
 			.form-item{
 				display: inline-block;
-				padding: 0.25em 4em;
+				padding: 0.25em 2em;
 
 				&.selected{
 					font-weight: bold;
