@@ -41,12 +41,19 @@ $susy: (
 	}
 }
 
+.section-about-mwd{
+	article p{
+		text-align: justify;
+	}
+}
+
 .section-terms-use,
 .section-privacy-policy{
 	article p{
 		text-align: justify;
 	}
 }
+
 
 /**
  * Use 4 grid columns for smaller screens.
