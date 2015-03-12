@@ -34,6 +34,19 @@ $susy: (
  	margin: 0 auto;
 }
 
+//#content:after{
+//	content: "";
+//	display: block;
+//	clear: both;
+//}
+
+#content:after,
+.fixed-width:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
 .front #content{
 	.page__title{
 		text-align: center;
@@ -298,20 +311,11 @@ $susy: (
 
 }
 
-//THIS WORKS!
-//.region-sidebar-first{
-//	@include susy-breakpoint($bp-wide, 16){
-//		@include span(4);
-//	}
-//}
-
-
 @include susy-breakpoint($bp-wide, 16){
 
 	#main{
 		@include container();
 	}
-
 
 	/**
 	* The Layout when there are no sidebars.
@@ -384,8 +388,6 @@ $susy: (
 		/* Span 12 columns, starting in the 5th column from the left */
 		article{
 			@include span(12 omega);
-//			width: span(12 of 16);
-//			@include isolate(5 of 16);
 			margin-bottom: gutter();
 			outline: 1px solid $clr-gray;
 			clear: both;
@@ -411,16 +413,8 @@ $susy: (
 		#block-views-biographies-block{
 			width: span(12);
 			@include isolate(12 at 5);
-//			@include push(4);
-			
-//			@include span(12);
-//			@include push(4);
 			clear: both;
-//			@include isolate(5 of 16);
-//			width: span(12 of 16);
-//			@include isolate(5 of 16);
 			outline: 1px solid $clr-gray;
-//			@include clearfix;
 		}
 
 		#block-views-projects-block-4{
