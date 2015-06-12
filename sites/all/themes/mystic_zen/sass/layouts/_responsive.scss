@@ -13,6 +13,7 @@ $susy: (
 //		toggle: top right,
 	),
 	output: float,
+	gutters: 1/4,
 );
 
 
@@ -25,14 +26,31 @@ $susy: (
  * by setting a max-width.
  **/
 
-.fixed-width,
+//.fixed-width,
 .header_region_wrapper,
-#footer-columns,
-#footer,
-#triptych{
- 	max-width: 1200px;
- 	margin: 0 auto;
+#footer{
+ 	//max-width: 1200px;
+ 	max-width: span(14 at 2);
+ 	//margin: 0 auto;
+ 	//width: span(14 at 2);
+ 	margin-left: auto;
+ 	margin-right: auto;
 }
+
+//#footer-columns{
+//	margin-left: span(1) + gutter();
+//	margin-right: span(1)+ gutter();//
+
+//	.region-footer-firstcolumn,
+//	.region-footer-secondcolumn,
+//	.region-footer-thirdcolumn,
+//	.region-footer-fourthcolumn{
+//		@include span(4);
+//		&:last-child{
+//			@include last;
+//		}
+//	}
+//}
 
 //#content:after{
 //	content: "";
@@ -343,16 +361,34 @@ $susy: (
 				margin: 0 auto;
 			}
 
+			article.node-8,
+			article.node-9{
+				//width: span(12);
+				//@include span(12);
+				@include span(isolate 12 at 3);
+			}
 		}
 
-		#footer-columns{
-			.region-footer-firstcolumn,
-			.region-footer-secondcolumn,{
-				@include span(4);
+		#triptych{
+			margin-left: span(1) + gutter();
+			margin-right: span(1) + gutter();
+
+			.region-triptych-first,
+			.region-triptych-second,
+			.region-triptych-third{
+				@include gallery(1 of 3);
 				&:last-child{
 					@include last;
 				}
 			}
+		}
+
+		#footer-columns{
+			margin-left: span(1) + gutter();
+			margin-right: span(1)+ gutter();		
+
+			.region-footer-firstcolumn,
+			.region-footer-secondcolumn,
 			.region-footer-thirdcolumn,
 			.region-footer-fourthcolumn{
 				@include span(4);
@@ -360,10 +396,9 @@ $susy: (
 					@include last;
 				}
 			}
-		}
+		}		
 
 	}	
-
 
 	/**
 	* The Layout when there is only one sidebar, the left one.
@@ -374,23 +409,26 @@ $susy: (
 		.page__title{
 			width:  span(14);
 //			@include isolate(15 at 2);
-			//@include push(1);
+			@include push(1);
 			outline: 1px solid $clr-gray;
 		}
 
 		nav.breadcrumb{
 			width: span(13);
-			@include isolate(13 at 2);
+			@include push(2);
 			outline: 1px solid $clr-gray;
 			clear: both;
 		}
 
 		/* Span 12 columns, starting in the 5th column from the left */
 		article{
-			@include span(12 omega);
+			//@include span(11 at 5 omega);
+			@include span(11 omega);
+			//width: span(11 omega);
 			margin-bottom: gutter();
+			margin-right: span(1) + gutter();
 			outline: 1px solid $clr-gray;
-			clear: both;
+			//clear: both;
 		}
 
 		/* Span 12 columns, starting in the 4th column from the left */
@@ -401,11 +439,12 @@ $susy: (
 				
 		/* Span 4 columns, starting in the 1st column from the left */
 		aside{
-//			@include span(4);
-			width: span(4);
-			@include isolate(4 at 0);
-//			@include span(4 at 0 alpha);
-//			width: span(4 of 16);
+			//@include span(4);
+			width: span(3);
+			@include isolate(3 at 2);
+			//@include push(1);
+			//@include span(4 at 0 alpha);
+			//width: span(4 of 16);
 			outline: 1px solid $clr-gray;
 			clear: left;			
 		}
@@ -421,41 +460,12 @@ $susy: (
 			clear: both;
 		}		
 
-//		#block-block-3{
-//			@include span(12 omega);
-//			width: span(4);
-//			@include isolate(5 of 16);
-//			@include span(4 of 12);
-//			@include span(isolate 4 at 5 of 16); //THIS WORKS
-//			outline: 1px solid $clr-gray;
-//		}	
-
-//		#block-block-8{
-//			@include span(12 omega);
-//			width: span(4 of 16);
-//			@include isolate(9 of 16);
-//			@include span(4 of 12); // THIS WORKS
-//			@include span(isolate 4 at 9 of 16);
-//			outline: 1px solid $clr-gray;
-//		}
-
-//		#block-block-9{
-//			@include span(12 omega);
-//			width: span(4 of 16);
-//			@include isolate(13 of 16);
-//			@include span(4 of 12 omega);
-//			@include span(isolate 4 at 13 of 16 omega); // THIS WORKS
-//			outline: 1px solid $clr-gray;
-//		}
-
 		#footer-columns{
+			margin-left: span(1) + gutter();
+			margin-right: span(1)+ gutter();		
+
 			.region-footer-firstcolumn,
-			.region-footer-secondcolumn,{
-				@include span(4);
-				&:last-child{
-					@include last;
-				}
-			}
+			.region-footer-secondcolumn,
 			.region-footer-thirdcolumn,
 			.region-footer-fourthcolumn{
 				@include span(4);
@@ -556,6 +566,21 @@ $susy: (
 			}
 		}
 
+		#footer-columns{
+		margin-left: span(1) + gutter();
+		margin-right: span(1)+ gutter();	
+
+		.region-footer-firstcolumn,
+		.region-footer-secondcolumn,
+		.region-footer-thirdcolumn,
+		.region-footer-fourthcolumn{
+			@include span(4);
+			&:last-child{
+				@include last;
+			}
+		}
+}	
+
 	}
 
 	/**
@@ -610,7 +635,3 @@ $susy: (
 	}
 
 }
-
-
-
-

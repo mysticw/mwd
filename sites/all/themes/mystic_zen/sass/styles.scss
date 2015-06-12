@@ -54,11 +54,21 @@ body{
 * End Breakpoint testing
 **/
 
+article{
 
-
-article p{
-	text-align: center;
+	h3{
+		padding: 0 5px;
+	}
+	
+	p{
+		padding: 0 5px;
+		text-align:center;
+	}
 }
+
+//article p{
+//	text-align: center;
+//}
 
 nav.breadcrumb{
 	padding-bottom: 0.5em;
@@ -136,6 +146,9 @@ nav.breadcrumb{
 /*Sidebar stylling
 --------------------------------------------------------*/
 
+.region-sidebar-first{
+	padding: 0 5px;
+}
 .region-sidebar-second{
 	border-top: 1px solid $black;
 }
