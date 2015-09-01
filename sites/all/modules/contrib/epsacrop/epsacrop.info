@@ -4,9 +4,9 @@ version = 7.x-2.x-dev
 core = 7.x
 package = Media
 dependencies[] = image
-; Information added by drupal.org packaging script on 2011-12-23
-version = "7.x-2.2"
+; Information added by Drupal.org packaging script on 2015-07-25
+version = "7.x-2.3"
 core = "7.x"
 project = "epsacrop"
-datestamp = "1324651840"
+datestamp = "1437827940"
 
