@@ -81,8 +81,8 @@ function form_builder_webform_save_form_submit($form, &$form_state) {
  * Save the current Form Builder interface changes for a webform node.
  */
 function form_builder_webform_save_node($node) {
-  $form_cache = form_builder_cache_load('webform', $node->nid);
-  $element_ids = form_builder_preview_prepare($form_cache, 'webform', $node->nid);
+  $form_obj = FormBuilderLoader::instance()->fromCache('webform', $node->nid);
+  $element_ids = $form_obj->getElementIds();
 
   // Remove components if deleted and calculate the highest in-use CID.
   $max_cid = 0;
@@ -94,7 +94,7 @@ function form_builder_webform_save_node($node) {
     $max_cid = max($max_cid, $cid);
 
     // Remove components from the $node that have been removed in the UI.
-    if (!in_array($element_id, $element_ids)) {
+    if (!$form_obj->getElementArray($element_id)) {
       if (isset($node->webform['components'][$cid])) {
         unset($node->webform['components'][$cid]);
       }
@@ -103,16 +103,17 @@ function form_builder_webform_save_node($node) {
 
   // Update any new/updated components in the node record.
   foreach ($element_ids as $element_id) {
-    $component = form_builder_webform_get_component($node, $element_id, $form_cache);
+    $component = $form_obj->getComponent($element_id);
     if ($component) {
       if (empty($component['cid'])) {
         $cid = ++$max_cid;
         $component['cid'] = $cid;
         // Reassign the component ID to the form so that future elements that
         // may depend on this one set their parent ID (pid) properly.
-        $element = form_builder_get_element($form_cache, $element_id);
+        $element = $form_obj->getElementArray($element_id);
         $element['#webform_component']['cid'] = $cid;
-        form_builder_set_element($form_cache, $element);
+        $form_obj->setElementArray($element);
+        $form_obj->save();
       }
       else {
         $cid = $component['cid'];
@@ -127,38 +128,7 @@ function form_builder_webform_save_node($node) {
   node_save($node);
 
   // Remove the cached form_builder form.
-  form_builder_cache_delete('webform', $node->nid);
-}
-
-/**
- * Save the contents of a form component into Webform's database tables.
- */
-function form_builder_webform_get_component($node, $element_id, $form) {
-  module_load_include('inc', 'form_builder_webform', 'form_builder_webform.components');
-
-  $element = form_builder_get_element($form, $element_id);
-  $component = $element['#webform_component'];
-  $type = $component['type'];
-
-  $component['email'] = 0;
-  $component['nid'] = $node->nid;
-  $component['weight'] = $element['#weight'];
-
-  // Set the parent ID to default to the form base.
-  $component['pid'] = 0;
-
-  // Set the parent ID for the component if it is nested inside another component.
-  $parent = form_builder_get_element($form, $element['#form_builder']['parent_id']);
-  if ($parent && isset($parent['#webform_component']['cid'])) {
-    $component['pid'] = $parent['#webform_component']['cid'];
-  }
-
-  // Allow each component to set any specific settings that can't be mapped.
-  if ($saved_component = form_builder_webform_component_invoke($type, 'form_builder_save', $component, $element)) {
-    $component = $saved_component;
-  }
-
-  return $component;
+  $form_obj->delete();
 }
 
 /**
@@ -166,7 +136,9 @@ function form_builder_webform_get_component($node, $element_id, $form) {
  */
 function form_builder_webform_cancel(&$form, &$form_state) {
   drupal_set_message(t('Changes to the form have been discarded.'));
-  form_builder_cache_delete('webform', $form_state['values']['nid']);
+  FormBuilderLoader::instance()
+    ->fromCache('webform', $form_state['values']['nid'])
+    ->delete();
 }
 
 /**
@@ -188,6 +160,7 @@ function form_builder_webform_form_builder_property_groups($form_type) {
  */
 function form_builder_webform_form_builder_form_types() {
   $types['webform'] = array(
+    'class' => 'FormBuilderWebformForm',
     'property class' => 'FormBuilderWebformProperty',
     'element class' => 'FormBuilderWebformElement',
   );
@@ -195,12 +168,15 @@ function form_builder_webform_form_builder_form_types() {
 }
 
 /**
- * Implements hook_form_builder_types().
+ * Implements hook_form_builder_element_types().
  *
- * Define the fields within webforms that are editable.
+ * Define the element types within webforms that are editable.
  */
-function form_builder_webform_form_builder_types() {
-  $fields = array();
+function form_builder_webform_form_builder_element_types($form_type, $form_id) {
+  if ($form_type != 'webform') {
+    return;
+  }
+  $types = array();
 
   $components = webform_components();
   foreach ($components as $type => $component) {
@@ -212,11 +188,11 @@ function form_builder_webform_form_builder_types() {
           }
         }
       }
-      $fields = array_merge($fields, $additional_fields);
+      $types = array_merge($types, $additional_fields);
     }
   }
 
-  return array('webform' => $fields);
+  return $types;
 }
 
 /**
